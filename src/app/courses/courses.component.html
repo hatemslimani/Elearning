@@ -1,0 +1,86 @@
+<div class="courses">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div class="courses_search_container">
+                    <form #searchName="ngForm" (ngSubmit)="searchByname(searchName.value)" id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start">
+                        <input type="search" ngModel name="name" class="courses_search_input" placeholder="Search Courses" required="required">
+                        <select id="courses_search_select" class="courses_search_select courses_search_input" ngModel  name="categoryID" (change)="searchByCategory(searchName.value)"   *ngIf="category">
+                            <option *ngFor="let item of category" value="{{item._id}}">{{item.name}}</option>
+                        </select>
+                        <button action="submit" class="courses_search_button ml-auto">search now</button>
+                    </form>
+                </div>
+                <div class="courses_container">
+                    <div class="row courses_row">
+
+                       <div class="col-md-6 col-lg-4 course_col" *ngFor="let course of courses">
+                        <div class="course">
+
+                            <div class="course_image"><img  class="img-thumbnail"  src="{{course.image}}" alt=""></div>
+                            <div class="course_body">
+                                <h3 class="course_title"><a href="/details/{{course._id}}">{{course.name}}</a></h3>
+                                <div class="course_teacher">Mr. John Taylor</div>
+                                <div class="course_text">
+                                    <p class="overme">{{course.description}}</p>
+                                </div>
+                            </div>
+                            <div class="course_footer">
+                                <div
+                                    class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="course_info">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                        <span>20 Student</span>
+                                    </div>
+                                    <div class="course_info">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <span>5 Ratings</span>
+                                    </div>
+                                    <div class="course_price ml-auto">$130</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sidebar">
+
+                    <div class="sidebar_section">
+                        <div class="sidebar_section_title">Latest Courses</div>
+                        <div class="sidebar_latest">
+
+                            <div class="latest d-flex flex-row align-items-start justify-content-start" *ngFor="let lastCourse of lastCourses">
+                                <div class="latest_image">
+                                    <div><img src="{{lastCourse.image}}" alt=""></div>
+                                </div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="course.html">{{lastCourse.name}}</a></div>
+                                    <div class="latest_price">Free</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar_section">
+                        <div class="sidebar_section_title">Tags</div>
+                        <div class="sidebar_tags">
+                            <ul class="tags_list">
+                                <li><a href="#">creative</a></li>
+                                <li><a href="#">unique</a></li>
+                                <li><a href="#">photography</a></li>
+                                <li><a href="#">ideas</a></li>
+                                <li><a href="#">wordpress</a></li>
+                                <li><a href="#">startup</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

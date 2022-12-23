@@ -1,0 +1,203 @@
+<div class="home">
+    <div class="breadcrumbs_container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="blog.html">My Courses</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2" *ngIf="getRole()=='Teacher'">
+                <div class="sidebar">
+
+                    <div class="sidebar_section">
+                        <div class="sidebar_section_title">Categories</div>
+                        <div class="sidebar_categories">
+                            <ul>
+                                <li><a data-toggle="modal" data-target="#addCourseModal">Add Course</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">IT & Software</a></li>
+                                <li><a href="#">Languages</a></li>
+                                <li><a href="#">Programming</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-lg-10" *ngIf="getRole()=='Teacher'">
+                <!-- <div class="courses_search_container">
+                    <form action="#" id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start">
+                        <input type="search" class="courses_search_input" placeholder="Search Courses" required="required">
+                        <select id="courses_search_select" class="courses_search_select courses_search_input">
+                            <option>All Categories</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                        </select>
+                        <button action="submit" class="courses_search_button ml-auto">search now</button>
+                    </form>
+                </div> -->
+                <div class="courses_container">
+                    <div class="row courses_row">
+                        <!-- Course -->
+                        <div class="col-lg-4 course_col" *ngFor="let course of courses">
+                            <div class="course">
+                                
+                                <div class="course_image"><img  class="img-thumbnail"  src="{{course.image}}" alt=""></div>
+                                <div class="course_body">
+                                    <h3 class="course_title"><a href="/details/{{course._id}}">{{course.name}}</a></h3>
+                                    <div class="course_teacher">Mr. John Taylor</div>
+                                    <div class="course_text">
+                                        <p class="overme">{{course.description}}</p>
+                                    </div>
+                                </div>
+                                <div class="course_footer">
+                                    <div
+                                        class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                        <div class="course_info">
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                            <span>20 Student</span>
+                                        </div>
+                                        <div class="course_info">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <span>5 Ratings</span>
+                                        </div>
+                                        <div class="course_price ml-auto">$130</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12" *ngIf="getRole()=='Student'">
+                <!-- <div class="courses_search_container">
+                    <form action="#" id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start">
+                        <input type="search" class="courses_search_input" placeholder="Search Courses" required="required">
+                        <select id="courses_search_select" class="courses_search_select courses_search_input">
+                            <option>All Categories</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                        </select>
+                        <button action="submit" class="courses_search_button ml-auto">search now</button>
+                    </form>
+                </div> -->
+                <div class="courses_container">
+                    <div class="row courses_row">
+                        <div class="col-lg-3 course_col" *ngFor="let course of courses">
+                            <div class="course">
+                                
+                                <div class="course_image"><img  class="img-thumbnail"  src="{{course.image}}" alt=""></div>
+                                <div class="course_body">
+                                    <h3 class="course_title"><a href="/details/{{course._id}}">{{course.name}}</a></h3>
+                                    <div class="course_teacher">Mr. John Taylor</div>
+                                    <div class="course_text">
+                                        <p class="overme">{{course.description}}</p>
+                                    </div>
+                                </div>
+                                <div class="course_footer">
+                                    <div
+                                        class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                        <div class="course_info">
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                            <span>20 Student</span>
+                                        </div>
+                                        <div class="course_info">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <span>5 Ratings</span>
+                                        </div>
+                                        <div class="course_price ml-auto">$130</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add course</h5>
+                <button  type="button" class="close" id="closssse" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container-fluid justify-content-center ">
+                <form #courseForm="ngForm" id="courseForm" (ngSubmit)="addCourse(courseForm.value)">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Course Name</label>
+                                <input type="text" ngModel class="form-control" id="exampleInputEmail1" name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Select category</label>
+                                <select class="form-control" ngModel id="exampleFormControlSelect1" name="categoryID">
+                                    <option *ngFor="let category of category" value="{{category._id}}">{{ category.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1" >Description</label>
+                                <textarea class="form-control" ngModel id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea2">Contents</label>
+                                <textarea class="form-control" ngModel id="exampleFormControlTextarea2" rows="3" name="contents"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-10 col-12">
+                            <div class="form-group files"><label class="my-auto">Upload course image </label> <input id="file"
+                                    type="file" class="form-control" (change)="onSelect($event)" name="image" /></div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-10 col-12">
+                            <div class="mb-2 mt-4">
+                                <div class="text-right"><button type="submit" class="btn btn-primary btn-block"><small
+                                            class="font-weight-bold">save</small></button> </div>
+                            </div>
+                        </div>
+                    </div>   
+                </form>             
+            </div>
+        </div>
+    </div>
+</div>

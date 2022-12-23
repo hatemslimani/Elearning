@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Lora:wght@400;600;700&display=swap');
+* {
+    font-family: 'PT Sans', sans-serif;
+    color: #444;
+}
+
+#carousel {
+    //background-color: #6f42c1;
+    padding-top: 9vh;
+    img {
+        height: 60vh;
+    }
+}
+
+h1 {
+    font-family: 'Lora', serif;
+}
+
+.active {
+    font-weight: bold !important;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: #6f42c1 !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+.navbar-toggler-icon {
+    background-image: none !important;
+    color: #444;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #carousel {
+        //background-color: #6f42c1;
+        padding-top: 15vh;
+    }
+}
+
+.counter {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+//courses
+section {
+    .courses {
+        width: 100%;
+        padding-top: 13px;
+        padding-bottom: 100px;
+        .course {
+            width: 100%;
+            border-radius: 6px;
+            background: #FFFFFF;
+            box-shadow: 0px 1px 10px rgba(29, 34, 47, 0.5);
+        }
+        .courses_row {
+            margin-top: 45px;
+        }
+        .course_image {
+            width: 100%;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            overflow: hidden;
+        }
+        .course_image img {
+            max-width: 100%;
+        }
+        .course_body {
+            padding-top: 22px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 23px;
+        }
+        .course_title a {
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+            color: #384158;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
+        .course_title a:hover {
+            color: #14bdee;
+        }
+        .course_teacher {
+            font-size: 15px;
+            font-weight: 400;
+            color: #384158;
+            margin-top: 6px;
+        }
+        .course_text {
+            margin-top: 13px;
+        }
+        .course_footer {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .course_footer_content {
+            width: 100%;
+            border-top: solid 1px #e5e5e5;
+            padding-top: 9px;
+            padding-bottom: 11px;
+        }
+        .course_info {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            color: #55555a;
+        }
+        .course_info:first-child {
+            margin-right: 18px;
+        }
+        .course_info i {
+            color: #ffc80a;
+        }
+        .course_price {
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #14bdee;
+        }
+        .course_price span {
+            font-family: 'Roboto Slab', serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: line-through;
+            color: #b5b8be;
+            margin-right: 10px;
+        }
+        .courses_button {
+            width: 210px;
+            height: 46px;
+            border-radius: 3px;
+            background: #14bdee;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 41px;
+            box-shadow: 0px 5px 40px rgba(29, 34, 47, 0.15);
+        }
+        .courses_button:hover {
+            box-shadow: 0px 5px 40px rgba(29, 34, 47, 0.45);
+        }
+        .courses_button a {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 46px;
+            color: #FFFFFF;
+        }
+        ul {
+            list-style: none;
+            margin-bottom: 0px;
+        }
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            line-height: 1.85;
+            font-weight: 400;
+            color: #76777a;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+            text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+        }
+        p a {
+            display: inline;
+            position: relative;
+            color: inherit;
+            border-bottom: solid 1px #ffa07f;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+        a,
+        a:hover,
+        a:visited,
+        a:active,
+        a:link {
+            text-decoration: none;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+            text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+        }
+        p a:active {
+            position: relative;
+            color: #FF6347;
+        }
+        p a:hover {
+            color: #FFFFFF;
+            background: #ffa07f;
+        }
+        p a:hover::after {
+            opacity: 0.2;
+        }
+        h1 {
+            font-size: 48px;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        h5 {
+            font-size: 14px;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+            text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+            color: #384158;
+            margin-bottom: 0;
+        }
+        .form-control {
+            color: #db5246;
+        }
+        section {
+            display: block;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .clear {
+            clear: both;
+        }
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+        }
+        .clearfix::after {
+            clear: both;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+        .float_left {
+            float: left;
+        }
+        .float_right {
+            float: right;
+        }
+        .trans_200 {
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
+        .trans_300 {
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -ms-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+        .trans_400 {
+            -webkit-transition: all 400ms ease;
+            -moz-transition: all 400ms ease;
+            -ms-transition: all 400ms ease;
+            -o-transition: all 400ms ease;
+            transition: all 400ms ease;
+        }
+        .trans_500 {
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+        .fill_height {
+            height: 100%;
+        }
+        .super_container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .prlx_parent {
+            overflow: hidden;
+        }
+        .prlx {
+            height: 130% !important;
+        }
+        .nopadding {
+            padding: 0px !important;
+        }
+    }
+}
